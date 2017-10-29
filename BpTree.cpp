@@ -16,6 +16,12 @@ BpTree::BpTree(const BpTree &tree) {
     root = make_unique<Node>(*tree.root);
 }
 
+BpTree::BpTree(BpTree&& tree) noexcept {
+    n = tree.n;
+    root = move(tree.root);
+    tree.root = make_unique<Node>(tree.n, true); // make sure root is never null so printKeys() doesn't break
+}
+
 BpTree& BpTree::operator=(const BpTree& tree) {
     if (this != &tree) {
         n = tree.n;

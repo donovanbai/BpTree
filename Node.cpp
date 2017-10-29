@@ -9,7 +9,7 @@ Node::Node(int n, bool is_leaf) {
     next = nullptr;
 }
 
-Node::Node(Node &node, queue<Node*> *qp) {
+Node::Node(const Node &node, queue<Node*> *qp) {
     keys = node.keys;
     capacity = node.capacity;
     is_leaf = node.is_leaf;

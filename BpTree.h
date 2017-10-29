@@ -16,6 +16,7 @@ class BpTree {
   public:
     explicit BpTree(int n);
     BpTree(const BpTree &tree);
+    BpTree(BpTree&& tree) noexcept;
     BpTree& operator=(const BpTree& tree);
     bool insert(int key, string value);
     bool remove(int key);

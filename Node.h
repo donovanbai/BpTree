@@ -16,7 +16,7 @@ class Node {
     Node *next;
 
     Node(int n, bool is_leaf);
-    Node(Node &node, queue<Node*> *qp = nullptr); // copies subtree
+    Node(const Node &node, queue<Node*> *qp = nullptr); // copies subtree
     int get_capacity();
     long find_index(Node *node); // find the index of the key that corresponds to node
     long find_index(int key);
