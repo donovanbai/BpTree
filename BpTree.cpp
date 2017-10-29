@@ -12,11 +12,13 @@ BpTree::BpTree(int n) {
 }
 
 BpTree::BpTree(const BpTree &tree) {
+    n = tree.n;
     root = make_unique<Node>(*tree.root);
 }
 
 BpTree& BpTree::operator=(const BpTree& tree) {
     if (this != &tree) {
+        n = tree.n;
         root = make_unique<Node>(*tree.root);
     }
     return *this;
